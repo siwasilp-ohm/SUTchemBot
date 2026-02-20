@@ -41,12 +41,16 @@ class Database {
         if (self::$instance === null) {
             try {
                 $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+                $initCommandAttr = defined('Pdo\Mysql::ATTR_INIT_COMMAND')
+                    ? constant('Pdo\Mysql::ATTR_INIT_COMMAND')
+                    : PDO::MYSQL_ATTR_INIT_COMMAND;
+
                 $options = [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     // Enable emulated prepares so LIMIT/OFFSET work with named params
                     PDO::ATTR_EMULATE_PREPARES => true,
-                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci"
+                    $initCommandAttr => "SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci"
                 ];
                 self::$instance = new PDO($dsn, DB_USER, DB_PASS, $options);
             } catch (PDOException $e) {
