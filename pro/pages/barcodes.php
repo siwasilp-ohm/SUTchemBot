@@ -8,13 +8,13 @@ $rows = pro_db()->query('SELECT c.container_code, ch.name AS chemical_name, c.ow
 <main class="container">
     <?php pro_render_flash(); ?>
     <section class="card">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-            <h2>Barcode Labels for Packaging & Transactions</h2>
+        <div class="section-head">
+            <h2 class="section-title">Barcode Labels for Packaging & Transactions</h2>
             <button class="btn" onclick="window.print()">Print Labels</button>
         </div>
         <div class="grid">
             <?php foreach ($rows as $r): ?>
-                <article class="card label-card" style="background:#fff;color:#111">
+                <article class="card label-card">
                     <strong><?= pro_h($r['chemical_name']) ?></strong><br>
                     Owner: <?= pro_h($r['owner_name']) ?><br>
                     Remaining: <?= pro_h((string) $r['qty_remaining']) . ' ' . pro_h($r['unit']) ?><br>

@@ -83,7 +83,7 @@ ORDER BY t.id DESC LIMIT 12')->fetchAll();
 <main class="container">
     <?php pro_render_flash(); ?>
     <section class="card">
-        <h2>Chemical Containers</h2>
+        <h2 class="section-title">Chemical Containers</h2>
         <table class="table">
             <thead><tr><th>Code</th><th>Chemical</th><th>Owner</th><th>Remaining</th><th>Status</th><th>Transaction</th></tr></thead>
             <tbody>
@@ -113,8 +113,8 @@ ORDER BY t.id DESC LIMIT 12')->fetchAll();
         </table>
     </section>
 
-    <section class="card" style="margin-top:14px">
-        <h3>Recent Transactions</h3>
+    <section class="card mt">
+        <h3 class="section-title">Recent Transactions</h3>
         <table class="table">
             <thead><tr><th>Time</th><th>Container</th><th>Action</th><th>Qty</th><th>User</th><th>Status</th><th>Note</th></tr></thead>
             <tbody>
