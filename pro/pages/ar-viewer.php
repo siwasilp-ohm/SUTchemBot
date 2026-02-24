@@ -27,11 +27,11 @@ if (!$row && !empty($list)) {
 <main class="container">
     <?php pro_render_flash(); ?>
     <section class="card">
-        <h2>AR + WebXR Spatial Anchoring</h2>
+        <h2 class="section-title">AR + WebXR Spatial Anchoring</h2>
         <p class="muted">รองรับการดู 3D model พร้อม overlay ข้อมูลสำคัญของสารเคมีบนอุปกรณ์ที่รองรับ WebXR</p>
 
         <?php if (!empty($list)): ?>
-            <form method="get" class="form-row" style="margin-bottom:12px">
+            <form method="get" class="form-row mt">
                 <input type="hidden" name="page" value="ar-viewer">
                 <select name="container_id">
                     <?php foreach ($list as $item): ?>

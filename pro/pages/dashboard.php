@@ -27,8 +27,8 @@ $roleFocus = [
         <article class="card"><div class="muted">Low Stock Alerts</div><div class="kpi"><?= $kpi['low_stock'] ?></div></article>
     </section>
 
-    <section class="card" style="margin-top:14px">
-        <h3>Role-based Focus: <span class="badge"><?= pro_h(strtoupper($user['role'])) ?></span></h3>
+    <section class="card mt">
+        <h3 class="section-title">Role-based Focus: <span class="badge"><?= pro_h(strtoupper($user['role'])) ?></span></h3>
         <p><?= pro_h($roleFocus[$user['role']] ?? 'Operational overview') ?></p>
         <div class="grid">
             <div class="card"><h4>Flow 1: Receive & Label</h4><p class="muted">รับสารเข้า, ผูก owner/lot, พิมพ์ barcode เพื่อติดบรรจุภัณฑ์</p></div>

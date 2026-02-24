@@ -17,7 +17,7 @@ function pro_header(string $title, ?array $user = null): void {
     </head>
     <body>
     <header class="topbar">
-        <div>
+        <div class="brand">
             <h1><?= pro_h(PRO_APP_NAME) ?></h1>
             <small>Smart Chemical Operations Platform</small>
         </div>
